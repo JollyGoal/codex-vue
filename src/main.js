@@ -3,6 +3,8 @@ import { createSSRApp } from 'vue'
 import App from './App.vue'
 import { createRouter } from './router'
 import { i18n } from './i18n'
+import PrimeVue from 'primevue/config';
+import Aura from '@primevue/themes/aura';
 
 // SSR requires a fresh app instance per request, therefore we export a function
 // that creates a fresh app instance. If using Vuex, we'd also be creating a
@@ -20,6 +22,19 @@ export function createApp() {
   app.config.globalProperties.$i18nRoute = i18nRoute
   app.use(i18n)
   // i18n config end
+
+  app.use(PrimeVue, {
+    // Default theme configuration
+    theme: {
+        preset: Aura,
+        options: {
+            prefix: 'p',
+            darkModeSelector: 'system',
+            cssLayer: false
+        }
+    },
+    ripple: true,
+  });
   
   app.config.globalProperties.$scrollToTop = (behavior = 'auto') => window?.scrollTo({ top: 0, behavior });
   const pinia = createPinia()

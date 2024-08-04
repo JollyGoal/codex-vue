@@ -1,9 +1,5 @@
 <template>
-  <div>
-    <router-link :to="$i18nRoute({ name: 'Home' })">Home</router-link>|
-    <router-link :to="$i18nRoute({ name: 'About' })">About</router-link>|
-    <router-link to="/not-exist">Not Exist</router-link>
-
+  <div class="main-wrapper">
     <main>
       <router-view v-slot="{ Component }">
         <template v-if="Component">
@@ -24,10 +20,43 @@
         </template>
       </router-view>
     </main>
+    <Drawer />
   </div>
 </template>
 
+<script setup>
+import Drawer from './components/Drawer.vue';
+
+// enable primevue ripple effect
+import { onMounted } from 'vue';
+import PrimeVue from 'primevue/config';
+
+onMounted(() => {
+  PrimeVue.ripple = true;
+});
+</script>
+
 <style lang="scss">
+@import "./assets/scss/fonts";
+@import "./assets/scss/index";
+html {
+  font-family: "Roboto", cursive;
+}
+
+</style>
+<style lang="scss" scoped>
+.main-wrapper {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+
+  main {
+    width: 100%;
+  }
+}
+</style>
+<!-- <style lang="scss">
 @import "./assets/scss/colors.scss";
 @import "./assets/scss/fonts.scss";
 @import "./assets/scss/index.scss";
@@ -69,4 +98,4 @@ main {
   justify-content: center;
   align-items: center;
 }
-</style>
+</style> -->

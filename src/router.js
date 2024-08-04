@@ -41,21 +41,6 @@ const childRoutes = [
     //   }
     // ]
   },
-  {
-    path: 'about',
-    name: 'About',
-    component: () => import(/* webpackChunkName: "about" */ './pages/About.vue')
-  },
-  {
-    path: 'external',
-    name: 'External',
-    component: () => import(/* webpackChunkName: "external" */ './pages/External.vue')
-  },
-  {
-    path: 'store',
-    name: 'Store',
-    component: () => import(/* webpackChunkName: "store" */ './pages/Store.vue')
-  },
 ]
 
 

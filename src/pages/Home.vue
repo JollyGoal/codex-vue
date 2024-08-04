@@ -51,7 +51,7 @@ const selectedCity = ref("M1");
   flex-direction: column;
   flex: 1 0 0;
   justify-content: space-between;
-  height: 100%;
+  min-height: -webkit-fill-available;
   width: 100%;
   max-height: 100vh;
   overflow: auto;
@@ -167,4 +167,5 @@ const selectedCity = ref("M1");
     }
   }
 }
+
 </style>

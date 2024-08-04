@@ -39,8 +39,40 @@ onMounted(() => {
 <style lang="scss">
 @import "./assets/scss/fonts";
 @import "./assets/scss/index";
+
+
+:root {
+  font-size: max(16px, 0.73vw);
+}
+
+@media screen and (max-width: 1024px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
 html {
   font-family: "Roboto", cursive;
+  height: 100%;
+}
+body {
+  height: 100%;
+}
+
+#app {
+  height: 100%;
 }
 
 </style>
@@ -56,46 +88,3 @@ html {
   }
 }
 </style>
-<!-- <style lang="scss">
-@import "./assets/scss/colors.scss";
-@import "./assets/scss/fonts.scss";
-@import "./assets/scss/index.scss";
-
-:root {
-  color: var(--primary);
-  font-size: max(16px, 0.73vw);
-}
-
-@media screen and (max-width: 1024px) {
-  :root {
-    font-size: 14px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  :root {
-    font-size: 12px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  :root {
-    font-size: 10px;
-  }
-}
-
-html {
-  background-color: var(--background);
-  font-family: "Roboto", cursive;
-}
-
-main {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-</style> -->

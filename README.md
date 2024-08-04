@@ -1,4 +1,4 @@
-# vue3-boilerplate
+# codex-vue
 
 This template should help get you started developing with Vue 3 in Vite.
 Ready setp for ssr, ssg, i18n, router, pinia
